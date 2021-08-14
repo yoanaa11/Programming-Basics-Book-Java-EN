@@ -1,69 +1,69 @@
-# Глава 2.2. Прости пресмятания с числа – изпитни задачи
+# Chapter 2.2. Simple calculations - Exam Problems
 
-В предходната глава се запознахме със системната конзола и как да работим с нея - как да **прочетем число** от конзолата и как да **отпечатаме резултат** на конзолата. Разгледахме основните аритметични операции и накратко споменахме типовете данни. В настоящата глава ще упражним и затвърдим наученото досега, като разгледаме няколко **по-сложни задачи**, давани на изпити.
+In the previous chapter, we got familiar with the system console and how to work with it – how to **read numbers** from the console and how to **print an output** on the console. We went through the main arithmetical operations and briefly mentioned data types. In this chapter we will practice and consolidate what we have learned so far, by solving a few **more complicated problems**, given .
 
 
-## Четене на числа от конзолата
+## Reading Numbers from the Console
 
-Преди да преминем към задачите, да си припомним най-важното от изучавания материал от предходната тема. Ще започнем с четенето на числа от конзолата.
+Before jumping into the practical problems, we are going to revise the most important aspects of what we have studied in the previous chapter. We will start with reading numbers from the console.
 
-### Четене на цяло число
+### Reading an Integer
 
-Необходима ни е променлива, в която да запазим числото (напр. **`num`**), и да използваме стандартната команда за четене на данни от конзолата в съчетание с функцията **`Integer.parseInt(…)`**, която конвертира текст в число:
+We need to create a variable to store the numbers (for example **`num`**), and to use the standard command to read data from the console in combination with the function **`Integer.parseInt(…)`**, which converts text into number:
 
 ```java
 int num = Integer.parseInt(scanner.nextLine());
 ```
 
-### Четене на дробно число
+### Reading a Floating-Point Number
 
-По същия начин, както четем цяло число, но този път ще използваме функцията **`double.parseDouble(…)`**:
+We read a floating-point number the same way we read an integer, but this time we use the function **`double.parseDouble(…)`**:
 
 ```java
 double num = Double.parseDouble(scanner.nextLine());
 ```
 
-## Извеждане на текст чрез форматни спецификатори (format specifiers)
+## Printing text through formatted specificators (format specifiers)
 
-**Format specifier** представлява израз, който ще бъде заменен с конкретна стойност при отпечатване. Метода **`System.out.printf(…)`** поддържа печатане на текст чрез форматните спецификатори, като първият аргумент, който трябва да подадем, е форматиращият низ, следван от броя аргументи, равен на броя на спецификаторите.
+**Format specifier** is an expression which is going to be replaced with a particular value while printing the output. The method **`System.out.printf(…)`** supports printing a string based on a formatted specificators, where the first argument, which we need to pass, is the formatted string, followed by the number of arguments, equal to the number of specificators.
 
 ```java
 System.out.printf("You are %s %s, a %d-years old person from %s.",
   firstName, lastName, age, town);
 ```
 
-## Аритметични оператори
+## Arithmetic Operators
 
-Да си припомним основните аритметични оператори за пресмятания с числа.
+Let's revise the main arithmetic operators for simple calculations.
 
-### Оператор +
+### Operator +
 
 ```java
 int result = 3 + 5; // резултатът е 8
 ```
 
-### Оператор -
+### Operator -
 
 ```java
 int result = 3 - 5; // резултатът е -2
 ```
 
-### Оператор *
+### Operator *
 
 ```java
 int result = 3 * 5; // резултатът е 15
 ```
 
-### Оператор /
+### Operator /
 
 ```java
 int result = 7 / 3; // резултатът е 2 (целочислено деление)
 double result2 = 5 / 2.0; // резултатът е 2.5 (дробно деление)
 ```
 
-## Конкатенация
+## Concatenation
 
-При използване на оператора **`+`** между променливи от тип текст (или между текст и число) се извършва т.нар. конкатенация (слепване на низове).
+By using the operator **`+`** between string variables (or between a string and a number), we have the so-called concatenation (cobining strings).
 
 ```java
 String firstName = "Ivan";
@@ -73,7 +73,7 @@ String str = firstName + " " + lastName + " is " + age + " years old";
 // Ivan Ivanov is 19 years old
 ```
 
-## Изпитни задачи
+## Exam Problems
 
 Сега, след като си припомнихме как се извършват пресмятания с числа и как се четат и печатат числа на конзолата, да минем към задачите. Ще решим няколко **задачи от приемен изпит** за кандидатстване в СофтУни.
 

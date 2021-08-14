@@ -1,7 +1,7 @@
 # Chapter 2.1. Simple Calculations
 
 -	What is **system console**?
-В настоящата глава ще се запознаем със следните концепции и програмни техники:
+In this chapter we are going to get familiar with the following concepts and programming techniques:
 - How to **read numbers** from the system console?
 - How to work with **data types and variables**, which are necessary to process numbers and the operations between them?
 - How to **print** output (a number) on the console?

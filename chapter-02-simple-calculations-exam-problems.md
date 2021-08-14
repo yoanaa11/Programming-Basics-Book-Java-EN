@@ -75,42 +75,42 @@ String str = firstName + " " + lastName + " is " + age + " years old";
 
 ## Exam Problems
 
-Сега, след като си припомнихме как се извършват пресмятания с числа и как се четат и печатат числа на конзолата, да минем към задачите. Ще решим няколко **задачи от приемен изпит** за кандидатстване в СофтУни.
+Now, after we revised how to make simple calculations and how to read and print numbers from the console, let's move to the tasks. We will solve a few **problems from a SoftUni entrance exam**.
 
-## Задача: учебна зала
+## Problem: Training Lab
 
-**Учебна зала** има правоъгълен размер **l** на **w** метра, без колони във вътрешността си. Залата е разделена на две части – лява и дясна, с коридор - приблизително по средата. В лявата и в дясната част има **редици с бюра**. В задната част на залата има голяма **входна врата**. В предната част на залата има **катедра** с подиум за преподавателя. Едно **работно място** заема **70 на 120 cm** (маса с размер 70 на 40 cm + място за стол и преминаване с размер 70 на 80 cm). **Коридорът** е широк поне **100 cm**. Изчислено е, че заради **входната врата** (която е с отвор 160 cm) **се губи точно 1 работно място**, а заради **катедрата** (която е с размер 160 на 120 cm) се губят точно **2 работни места**. Напишете програма, която въвежда размери на учебната зала и изчислява **броя работни места в нея** при описаното разположение (вж. фигурата).
+**A training lab** has a rectangular size **l** for **w** metres, without columns on the inside. The hall is divided into two parts- left and right, with a hallway - approximately in the middle. In both parts, there are **rows with desks**. In the back of the hall, there is a big **entrance door**. In the front, there is a **department** with podium for the lecturer. A single **working place** occupies **70 x 120 cm** (a table with size 70 x 40 cm + space for a chair with size 70 x 80 cm). **The hallway** width is at least **100 cm**. It is calculated that due to the **entrance door** (which has an opening of 160cm) **exactly one working space is lost**, and due to the **department** (кwhich has size of 160 x 120 cm) are lost exactly **2 working places**. Write a program that reads the size of the training lab as input parameters and calculates the **number of working places in it** at the described location (look at the figure).
 
-### Входни данни
+### Input Data
 
-От конзолата се четат **2 числа**, по едно на ред: **l** (дължина в метри) и **w** (широчина в метри).
+Are read from the console **2 numbers**, one per line: **l** (length in meters) and **w** (width in meters).
 
-Ограничения: **3 ≤ w ≤ l ≤ 100**.
+Constraints: **3 ≤ w ≤ l ≤ 100**.
 
-### Изходни данни
+### Output Data
 
-Да се отпечата на конзолата едно цяло число: **броят места** в учебната зала.
+Print on the console one integer number: **the number of working places** in the training lab.
 
-### Примерен вход и изход
+### Sample Input and Output
 
 | Вход   | Изход | Чертеж |
 |---------|-------|--------|
 |15<br>8.9  |129  | ![](assets/chapter-2-2-images/01.Training-lab-01.png)       | 
 |8.4<br>5.2 |39    | ![](assets/chapter-2-2-images/01.Training-lab-02.png)        |
 
-#### Пояснения към примерите
+#### Clarification of the Examples
 
-В първия пример залата е дълга 1500 cm. В нея могат да бъдат разположени **12 реда** (12 \* 120 cm = 1440 + 60 cm остатък). Залата е широка 890 cm. От тях 100 cm отиват за коридора в средата. В останалите 790 cm могат да се разположат по **11 бюра на ред** (11 \* 70 cm = 770 cm + 20 cm остатък). **Брой места = 12 * 11 - 3** = 132 - 3 = **129** (имаме 12 реда по 11 места = 132 минус 3 места за катедра и входна врата).
+In the first example, the hall length is 1500 cm. There could be located **12 rows** (12 \* 120 cm = 1440 + 60 cm residue). The hall width is 890 cm. From them 100 cm are for the hallway in the middle. In the rest 790 cm could be located **11 desks per row** (11 \* 70 cm = 770 cm + 20 cm residue). **Number of places = 12 * 11 - 3** = 132 - 3 = **129** (we have 12 rows with 11 working places = 132 minus 3 places for podium and entrance door).
 
-Във втория пример залата е дълга 840 cm. В нея могат да бъдат разположени **7 реда** (7 \* 120 cm = 840, без остатък). Залата е широка 520 cm. От тях 100 cm отиват за коридора в средата. В останалите 420 cm могат да се разположат по **6 бюра на ред** (6 \* 70 cm = 420 cm, без остатък). **Брой места = 7 * 6 - 3** = 42 - 3 = **39** (имаме 7 реда по 6 места = 42 минус 3 места за катедра и входна врата).
+In the second example, the hall length is 840 cm. There could be located **7 rows** (7 \* 120 cm = 840, without residue). The hall width is 520 cm. From them 100 cm are for the hallway in the middle. In the rest 420 cm could be located **6 desks per row** (6 \* 70 cm = 420 cm, without residue). **Number of places = 7 * 6 - 3** = 42 - 3 = **39** (We have 7 rows with 6 working places per row = 42 minus 3 laces for podium and entrance door).
 
-### Насоки и подсказки
+### Hints and Guidelines
 
-Опитайте първо сами да решите задачата. Ако не успеете, разгледайте насоките и подсказките.
+Try to solve the problem on your own first. If you do not succeed, go through the hints.
 
-#### Идея за решение
+#### Idea for Solution
 
-Както при всяка една задача по програмиране, е **важно да си изградим идея за решението ѝ**, преди да започнем да пишем код. Да разгледаме внимателно зададеното ни условие. Изисква се да напишем програма, която да изчислява броя работни места в една зала, като този брой е зависим от дължината и височината ѝ. Забелязваме, че те ще ни бъдат подадени като входни данни **в метри**, а информацията за това колко пространство заемат работните места и коридорът, ни е дадена **в сантиметри**. За да извършим изчисленията, ще трябва да използваме еднакви мерни единици, няма значение дали ще изберем да превърнем височината и дължината в сантиметри, или останалите данни в метри. За представеното тук решение е избрана първата опция.  
+As with any programming task is **important to build an idea for its solution**, before we start to write code. Let's carefully go through the problem requirements. We have to write a program that calculates the number of working places in a training lab, where the number depends on the hall length and height. We notice that the provided input will be in **meters**, and the information about how much space the working places and hallway take, will be in **centimeters**. To do the calculations, we will use the same measuring units, no matter whether we choose to convert length and height into centimeters or the other data in meters. The first option is used for the presented solution.  
 
 Следва да изчислим **колко колони и колко редици** с бюра ще се съберат. Колоните можем да пресметнем като **от широчината извадим необходимото място за коридора (100 cm)** и **разделим остатъка на 70 cm** (колкото е дължината на едно работно място). Редиците ще намерим като разделим **дължината на 120 cm**. И при двете операции може да се получи реално число с цяла и дробна част, **в променлива трябва да запазим обаче само цялата част**. Накрая умножаваме броя на редиците по този на колоните и от него изваждаме 3 (местата, които се губят заради входната врата и катедрата). Така ще получим исканата стойност. 
 

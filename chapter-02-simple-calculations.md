@@ -48,7 +48,7 @@ Now in the variable **`num`** of integer type **`int`** we have read, given as i
 
 Java is **highly typed language**, this means, that the variables have type, which is determine at compile time and can not change on the go (as it is in dynamic languages such as JavaScript and Python). In the example above `scanner` is from type `java.util.Scanner` (scanning text reader), and the variable `num` is from type `int` (integer number).
 
-### Example: Calculating a Square Area with side **а**
+### Example: Calculating a Square Area With Side **а**
  
 For example, let us look at the following program, which **reads an integer** from the console, **multiplies it** by itself (squares it) and **prints the result** from the multiplication. This is how we can calculate the square area by given side length read from the cosnole. The whole source code of the program follows. Write it in file with name `SquareArea.java`, or else you will have a compile time error:
 
@@ -227,7 +227,7 @@ int b = 7;
 int sum = a + b; // резултатът е 12
 ```
 
-### Изваждане на числа (оператор **`-`**)
+### Subtracting Numbers (оператор **`-`**)
 
 Subtracting Numbers is done by the operator **`-`**:
 

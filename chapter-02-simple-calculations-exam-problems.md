@@ -317,7 +317,7 @@ The exchange office has **commission fee within 0 to 5 percent from the final su
 
 Three numbers are read from the console:
 * On the first line – **number of Bitcoins**. Integer in the range of [**0 … 20**].
-* On the second line – **броят китайски юани**. Floating-point number in the range of [**0.00 … 50 000.00**].
+* On the second line – **number of Chinese yuan**. Floating-point number in the range of [**0.00 … 50 000.00**].
 * On the third line – **comission fee**. Floating-point number in the range of [**0.00 … 5.00**].
 
 ### Output Data
@@ -425,31 +425,31 @@ Let's first calculate **how much the monthly salary** of Ivan is. . We do that b
 
 #### Choosing Data Types
 
-**Работните дни за месец** са дадени като **цяло число**, следователно за тяхната стойност може да декларираме променлива от **тип `int`**. За **изкараните пари**, както и за **курса на долара спрямо лева**, ще получим **реално число**, следователно за тях използваме **`double`**. Тъй като **`double`** e типът данни с **по-голям обхват**, а за изходната стойност също се изисква **реално число** (с цяла и дробна част), ще използваме него и за останалите променливи, които създаваме. 
+**The working days per month** are given as an **integer**, therefore, we can declare a variable of **type `int`**. For the **earned money**, as well as for the **exchange rate of dollar to leva**, we will obtain **a floating-point number**, so we use for them **`double`**. As **`double`** is the type with **the higher scope**, and the output should also be **a floating-point number**, we use double for the other variables that we create as well. 
 
-#### Решение
+#### Solution
 
-Отново: след като имаме идея как да решим задачата и сме помислили за типовете данни, с които ще работим, пристъпваме към **писането на програмата**. Както и в предходните задачи, можем да разделим решението на три подзадачи: 
-* **Прочитане на входните данни**.
-* **Извършване на изчисленията**.
-* **Извеждане на изход** на конзолата.
+Again: after we have an idea on how to solve the problem and we have considered the data types that we are going to use, we can start **writing the program**. As in the previous tasks, we can divide the solution into three smaller tasks: 
+* **Reading the input**.
+* **Doing the calculations**.
+* **Printing the output** on the console.
 
-**Декларираме променливите**, които ще използваме, като отново се стараем да изберем **подходящи имена**. Със **`scanner.nextLine()`** четем подадените числа на конзолата и **преобразуваме** въведения от потребителя стринг към **`int`** или **`double`** с **`Integer/Double.parseInt/Double(…)`**. 
+**We declare the variables**, that we are going to use by trying to choose **meaningful names**. With **`scanner.nextLine()`** we read the input numbers from the console and we **convert** the input string to **`int`** or **`double`** with **`Integer/Double.parseInt/Double(…)`**. 
 
 ![](assets/chapter-2-2-images/05.Daily-earnings-01.png)
 
-Извършваме изчисленията: 
+Doing the Calculations: 
 
 ![](assets/chapter-2-2-images/05.Daily-earnings-02.png)
 
-Бихме могли да напишем израза, с който пресмятаме общия годишен доход, и без скоби. Тъй като умножението е операция с по-висок приоритет от събирането, то ще се извърши първо. Въпреки това **писането на скоби се препоръчва, когато използваме повече оператори**, защото така кодът става **по-лесно четим** и възможността да се допусне грешка е по-малка. 
+We could write an expression that calculates the annual income without brackets as well. As multiplication is an operation that has a higher priority over addition, it will be performed first. Despite that, **writing brackets is recommended when using more operators**, because this way the code becomes **more easily readable** and chances of making a mistake are smaller. 
 
-Накрая остава да изведем резултата на конзолата. Забелязваме, че се **изисква форматиране на числената стойност до втория знак след десетичната точка**. За целта можем да използваме **форматиращи спецификатори**, т.е. място, което ще бъде заместено с конкретна стойност при отпечатването. В Java за **форматиращ низ** се използва `%`, следван от определена буква (спецификатор). Цяло или дробно число можем да форматираме със спецификаторите **F**/**f**, или **D**/**d**. След него следва цяло положително число, което указва броя на знаците след десетичния знак (повече за форматирането може да прочетете в книгата ["Въведение в програмирането с Java" (стр. 137-143)](http://www.introprogramming.info/intro-java-book/read-online/glava4-vhod-i-izhod-ot-konzolata/#_Toc243587243).
+Finally, we have to print the result on the console. We notice that **the number has to be rounded up to the second digit after the decimal point**. For this purpose we can use **formatted specificators**, an item that will be replaced by a particular value when printing. In Java for **formatting specificator** is used `%`, followed by a specific letter (specificator). We can format an integer or a floating-point number by using **F**/**f**, or **D**/**d**. It is followed by a whole positive number, specifying the number of digits after the decimal point (you can read more about formatting in the book ["Въведение в програмирането с Java" (стр. 137-143)](http://www.introprogramming.info/intro-java-book/read-online/glava4-vhod-i-izhod-ot-konzolata/#_Toc243587243).
 
-Крайният резултат извеждаме така:
+We see the final result like this:
 
 ![](assets/chapter-2-2-images/05.Daily-earnings-03.png)
 
-### Тестване в Judge системата
+### Testing in the Judge system
 
-Тествайте решението си тук: [https://judge.softuni.bg/Contests/Practice/Index/650#4](https://judge.softuni.bg/Contests/Practice/Index/650#4).
+Test your solution here: [https://judge.softuni.bg/Contests/Practice/Index/650#4](https://judge.softuni.bg/Contests/Practice/Index/650#4).

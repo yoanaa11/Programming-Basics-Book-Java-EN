@@ -343,87 +343,87 @@ Let's first think of the way we can solve the task again, before having started 
 
 #### Idea for Solution
 
-Виждаме, че ще ни бъдат подадени **броят биткойни** и **броят китайски юани**. За **изходната стойност** е указано да бъде в **евро**. В условието са посочени и валутните курсове, с които трябва да работим. Забелязваме, че към евро можем да преобразуваме само сума в лева, следователно трябва **първо да пресметнем цялата сума, която Пешо притежава в лева**, и **след това да изчислим изходната стойност**. 
+ВWe see that the **number of bitcoins** and **the number of Chinese yuans** will be given in the input. **The output** should be in **euro**. The exchange rates that we have to work with are specified in the task. We notice that we can only exchange the sum in BGN to EUR so we have **first to calculate the whole sum that Peter has in BGN**, and **then to calculate the output**. 
 
-Тъй като ни е дадена информация за валутния курс на биткойни срещу лева, можем директно да направим това преобразуване. От друга страна, за да получим стойността на **китайските юани в лева**, трябва първо да ги **конвертираме в долари**, а след това **доларите - в лева**. Накрая ще **съберем двете получени стойности** и ще пресметнем на колко евро съответстват. 
+As we have information for the exchange rate of Bitcoins to BGN, we can directly exchange them. On the other hand, in order to get the value of **Chinese yuans in leva**, first we have to **exchange them in dollars**, and then **the dollars to BGN**. Finally, we will **sum the two values** and calculate how much Euro that is. 
 
-Остава последната стъпка: да **пресметнем колко ще бъде комисионната** и да извадим получената сума от общата. Като комисионна ще ни бъде подадено **реално число**, което ще представлява определен **процент от общата сума**. Нека още в началото разделим подаденото число на 100, за да изчислим **процентната му стойност**. Нея ще умножим по сумата в евро, а резултатът ще извадим от същата тази сума. Получената сума ще отпечатаме на конзолата. 
+Only the final step left: to **calculate the commission fee** and subtracting the new sum from the total one. The comission will be given as a **floating-point number**, which will represent a **percent from the total sum**. Let's divide it from the beginning by 100, so as to calculate its **percentage value**. We will multiply it by the sum in Euro and than divide the result from the same sum and print the final sum on the console. 
 
-#### Избор на типове данни
+#### Choosing Data Types
 
-**Биткойните** са дадени като **цяло число**, следователно за тяхната стойност може да декларираме **променлива от тип `int`**. Като брой **китайски юани и комисионна** ще получим **реално число**, следователно за тях използваме **`double`**. Тъй като **`double`** e типът данни с по-голям обхват, а **изходът** също ще бъде **реално число**, ще използваме него и за останалите променливи, които създаваме. 
+**Bitcoins** are given as **an integer**, therefore, for their value we can declare **a variable of type `int`**. As a number **Chinese yuan and commission fee** we will obtain **a floating-point number**, so we are going to use **`double`**. As **`double`** is the data type with bigger scope, and the **output** should also be a **floating-point numbe**, we will use it for the other variables we create as well. 
 
-#### Решение
+#### Solution
 
-След като сме си изградили идея за решението на задачата и сме избрали структурите от данни, с които ще работим, е време да пристъпим към **писането на код**. Както и в предните задачи, можем да разделим решението на три подзадачи: 
-* **Прочитане** на входните данни.
-* **Извършване** на изчисленията.
-* **Извеждане** на изход на конзолата.
+After we have built an idea on how to solve the task and we have chosen the data structures that we are going to use, it is time to get to **write the code**. As in the previous tasks, we can divide the solution into three smaller tasks: 
+* **Reading** the input.
+* **Doing** the calculations.
+* **Printing** the input on the console.
 
-**Декларираме променливите**, които ще използваме, като отново внимаваме да изберем **смислени имена**, които подсказват какво съдържат те. Инициализираме техните стойности: със **`scanner.nextLine()`** четем подадените числа на конзолата и конвертираме въведения от потребителя стринг към **`int`** или **`double`**. 
+**We declare the variables**, that we are going to use and again we carefully have to choose **meaningful names**, which are going to give us hints about the values they store. We initialize their values: with **`scanner.nextLine()`** we read the input numbers from the console and convert the string entered by the user to **`int`** or **`double`**. 
 
 ![](assets/chapter-2-2-images/04.Money-01.png)
 
-Извършваме необходимите изчисления: 
+We do the necessary calculations: 
 
 ![](assets/chapter-2-2-images/04.Money-02.png)
 
 ![](assets/chapter-2-2-images/04.Money-03.png)
 
-Накрая **пресмятаме стойността на комисионната** и я **изваждаме от сумата в евро**. Нека обърнем внимание на начина, по който можем да изпишем това: **`euro -= commission * euro`** e съкратен начин за изписване на **`euro = euro - (commission * euro)`**. В случая използваме **комбиниран оператор за присвояване** **`-=`**, който **изважда стойността от операнда вдясно от този вляво**. Операторът за умножение **`*`** има **по-висок приоритет** от комбинирания оператор, затова изразът **`commission * euro`** се изпълнява първи, след което неговата стойност се изважда. Повече за операторите може да прочетете в книгата ["Въведение в програмирането с Java", (стр. 116)](http://www.introprogramming.info/intro-csharp-book/read-online/glava3-operatori-i-izrazi/#_Toc298863965).
+Finally, we **calculate the commission fee value** and **subtract it from the sum in Euro**. Let's pay attention to the way we could write this: **`euro -= commission * euro`** is the short way to write **`euro = euro - (commission * euro)`**. In this case, we use a **combined assignment operator** **`-=`**, which **subtracts the value of the operand to the right from the one to the left**. The operator for multiplication **`*`** has **a higher priority** than the combined operator, this is why, the expression **`commission * euro`** is performed first and then its value is divided. More about the operators you can learn in the book ["Въведение в програмирането с Java", (стр. 116)](http://www.introprogramming.info/intro-csharp-book/read-online/glava3-operatori-i-izrazi/#_Toc298863965).
 
-В условието на задачата не е зададено специално форматиране или закръгляне на резултата, следователно трябва просто да изчислим изхода и да го отпечатаме на конзолата. 
+The task does not specify special string formatting or rounding the result, therefore, we just have to calculate the output and print it on the console. 
 
 ![](assets/chapter-2-2-images/04.Money-04.png)
 
-Нека обърнем внимание на нещо, което важи за всички задачи от този тип: разписано по този начин, решението на задачата е доста подробно. Тъй като условието като цяло не е сложно, бихме могли на теория да напишем един голям израз, в който директно след получаване на входните данни да сметнем изходната стойност. Напр., такъв израз би изглеждал ето така: 
+Let's pay attention to something that applies to all other problems of this type: written like that, the solution of the task is pretty detailed. As the task itself is not too complex, in theory, we could write one big expression, where right after having taken the input, we calculate the output. For example, such expression would look like this: 
 
 ![](assets/chapter-2-2-images/04.Money-05.png)
 
-Този код би дал правилен резултат, **но се чете трудно**. Няма да ни е лесно да разберем какво прави и дали съдържа грешки, както и как да поправим някоя такава. По-добра практика е **вместо един сложен израз да напишем няколко прости** и да запишем резултатите от тях в променливи със подходящи имена. Така кодът е ясен и по-лесно променяем. 
+This code would print a correct result, but it is **hard to read**. It won't be easy to find out how it works and whether if it contains any mistakes, as well as finding such and correcting them. It is better to **Instead of one complex expression, to write a few simpler ones** and to store their values in variables with appropriate names. This way, the code is cleaner and easily maintainable. 
 
-## Тестване в Judge системата
+## Testing in the Judge System
 
-Тествайте решението си тук: [https://judge.softuni.bg/Contests/Practice/Index/650#3](https://judge.softuni.bg/Contests/Practice/Index/650#3).
+Test your solution here: [https://judge.softuni.bg/Contests/Practice/Index/650#3](https://judge.softuni.bg/Contests/Practice/Index/650#3).
 
 
-## Задача: дневна печалба
+## Problem: Daily Earnings
 
-Иван е програмист в **американска компания** и работи от вкъщи **средно N дни в месеца**, като изкарва **средно по M долара на ден**. В края на годината Иван **получава бонус**, който е **равен на 2.5 месечни заплати**. От спечеленото през годината му се **удържат 25% данъци**. Напишете програма, която да **пресмята колко е чистата средна печалба** на Иван на ден в лева, тъй като той харчи изкараното в България. Приема се, че в годината има точно **365 дни**. **Курсът на долара** спрямо лева ще **се чете от конзолата**.
+Ivan is a programmer in an **American company** and he works from home **approximately N days per month**, and earns **approximately M dollars per day**. At the end of the year, Ivan **пgets bonus**, which is **equals to 2.5 monthly salaries**. From what he earned during the year **withhold 25% for taxes**. Write a program that **calculates what is the amount of Ivan's net average earnings** in leva per day, as he spends them in Bulgaria. It is accepted that one year has exactly **365 days**. **The exchange rate of dollar** to leva will be **read from the console**.
 
-### Входни данни
+### Input Data
 
-От конзолата се четат **3 числа**: 
-* На първия ред – **работни дни в месеца**. Цяло число в интервала [**5 … 30**].
-* На втория ред – **изкарани пари на ден**. Реално число в интервала [**10.00 … 2000.00**].
-* На третия ред – **курсът на долара спрямо  лева** /1 долар = X лева/. Реално число в интервала [**0.99 … 1.99**].
+They are read from the console **3 numbers**: 
+* On the first line – **working days in the month**. Integer in the range of [**5 … 30**].
+* On the second line – **earned money per day**. Floating-point number in the range of [**10.00 … 2000.00**].
+* On the third line – **exchange rate to leva** /1 dollar = X leva/. Floating-point number in the range of [**0.99 … 1.99**].
 
-### Изходни данни
+### Output Data
 
-На конзолата **да се отпечата 1 число – средната печалба на ден в лева**. Резултатът да се **форматира до втората цифра след десетичния знак**.
+On the console **to print 1 number – approximately daily earnings in leva**. The result should be **rounded up to the second digit after the decimal point**.
 
-### Примерен вход и изход
+### Sample Input and Output
 
 | Вход        | Изход          |Вход        | Изход            | Вход         | Изход    |
 |---------------|------------------|-------------|------------------|-------------|------------------|
 |21<br>75.00<br>1.59|74.61| 15<br>105<br>1.71|80.24|22<br>199.99<br>1.50|196.63|
 
-**Обяснение**:
-* **1 месечна заплата** = 21 \* 75 = 1575 долара.
-* **Годишен доход** = 1575 \* 12 + 1575 \* 2.5 = 22837.5 долара.
-* **Данък** = 25% от 22837.5 = 5709.375 лева.
-* **Чист годишен доход** = 17128.125 долара = 27233.71875 лева.
-* **Средна печалба на ден** = 27233.71875 / 365 = 74.61 лева.
+**Explanation**:
+* **1 monthly salary** = 21 \* 75 = 1575 dollars.
+* **Annual income** = 1575 \* 12 + 1575 \* 2.5 = 22837.5 dollars.
+* **Taxes** = 25% от 22837.5 = 5709.375 leva.
+* **Net annual income** = 17128.125 dollars = 27233.71875 leva.
+* **Average earning per day** = 27233.71875 / 365 = 74.61 leva.
 
-### Насоки и подсказки
+### Hints and Guidelines
 
-Първо да анализираме задачата и да измислим как да я решим. След това ще изберем типовете данни и накрая ще напишем кода на решението.
+Firstly, we have to analyze the task and think of a way to solve it. Then, we will choose data types and, finally, we will write the code.
 
-#### Идея за решение
+#### Idea for Solution
 
-Нека първо пресметнем **колко е месечната заплата** на Иван. Това ще направим като **умножим работните дни в месеца по парите**, които той печели на ден. **Умножаваме получения резултат** първо по 12, за да изчислим колко е заплатата му за 12 месеца, а след това и **по 2.5**, за да пресметнем бонуса. Като съберем двете получени стойности, ще изчислим **общия му годишен доход**. От него **трябва да извадим 25%**. Това може да направим като умножим общия доход по **0.25** и извадим резултата от него. Спрямо дадения ни курс **преобразуваме доларите в лева**, след което **разделяме резултата на дните в годината**, за които приемаме, че са 365.     
+Let's first calculate **how much the monthly salary** of Ivan is. . We do that by **multiplying the working days per month by his daily earnings**. **We multiply the result** by 12, so as to calculate his salary for 12 months, and then **by 2.5**, in order to calculate the bonus. After having summed up the two values, we calculate his **annual income**. From it **we have to reduce 25% for taxes**. We can do this by multipling his total income by **0.25** and subtract the result from it. Depending on the exchange rate, we **exchange the dollars to leva**, after that **we divide the result by the days in a year**, which we accepts that they are 365.     
 
-#### Избор на типове данни
+#### Choosing Data Types
 
 **Работните дни за месец** са дадени като **цяло число**, следователно за тяхната стойност може да декларираме променлива от **тип `int`**. За **изкараните пари**, както и за **курса на долара спрямо лева**, ще получим **реално число**, следователно за тях използваме **`double`**. Тъй като **`double`** e типът данни с **по-голям обхват**, а за изходната стойност също се изисква **реално число** (с цяла и дробна част), ще използваме него и за останалите променливи, които създаваме. 
 
